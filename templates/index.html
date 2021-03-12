@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>Super GeoCoder App</title>
+    <head>
+        <link href="../static/main.css" rel="stylesheet">
+    </head>
+        <body>
+            <div class="container">
+                <h1>Super GeoCoder</h1>
+                <h3>Upload a csv file and choose submit</h3>
+                <form action="{{url_for('success')}}" method="POST" enctype="multipart/form-data"> <br>
+                    <input type="file" accept=".csv"name="file">
+                    <button type="submit">Upload</button>
+                </form>
+                <div class="message">
+                    {{text | safe}}
+                </div>
+                {% include [btn] ignore missing %}
+            </div>
+        </body>
+</html>
